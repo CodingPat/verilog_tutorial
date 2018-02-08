@@ -1,10 +1,10 @@
-module fulladd4b(a,b,c_in,sum,c_out);
+module fulladd4b(sum,c_out,a,b,c_in);
 	//ports
-	input [3:0]a,b;
- 	input c_in;
 	output [3:0]sum;
 	output c_out;
-	
+	input [3:0]a,b;
+ 	input c_in;
+		
 	//internal nets
 	wire c1,c2,c3;
 

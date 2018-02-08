@@ -1,4 +1,4 @@
-module fulladd(a,b,c_in,sum,c_out);
+module fulladd(sum,c_out,a,b,c_in);
 
 	//ports
 	input a,b,c_in;

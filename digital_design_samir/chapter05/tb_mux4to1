@@ -1,0 +1,91 @@
+#! /home/woody/bin/iverilog/bin/vvp
+:ivl_version "11.0 (devel)" "(s20150603-479-ga1a7f5de)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "vhdl_textio";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x55da1a2ec630 .scope module, "tb_mux4to1" "tb_mux4to1" 2 1;
+ .timescale 0 0;
+v0x55da1a3162d0_0 .var "in0", 0 0;
+v0x55da1a316390_0 .var "in1", 0 0;
+v0x55da1a316460_0 .var "in2", 0 0;
+v0x55da1a316560_0 .var "in3", 0 0;
+v0x55da1a316630_0 .net "out", 0 0, L_0x55da1a316f70;  1 drivers
+v0x55da1a3166d0_0 .var "s0", 0 0;
+v0x55da1a3167a0_0 .var "s1", 0 0;
+S_0x55da1a2ec7c0 .scope module, "mymux" "mux4to1" 2 10, 3 3 0, S_0x55da1a2ec630;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "out"
+    .port_info 1 /INPUT 1 "i0"
+    .port_info 2 /INPUT 1 "i1"
+    .port_info 3 /INPUT 1 "i2"
+    .port_info 4 /INPUT 1 "i3"
+    .port_info 5 /INPUT 1 "s0"
+    .port_info 6 /INPUT 1 "s1"
+L_0x55da1a316870 .functor NOT 1, v0x55da1a3167a0_0, C4<0>, C4<0>, C4<0>;
+L_0x55da1a316960 .functor NOT 1, v0x55da1a3166d0_0, C4<0>, C4<0>, C4<0>;
+L_0x55da1a316a20 .functor AND 1, v0x55da1a3162d0_0, L_0x55da1a316870, L_0x55da1a316960, C4<1>;
+L_0x55da1a316bb0 .functor AND 1, v0x55da1a316390_0, L_0x55da1a316870, v0x55da1a3166d0_0, C4<1>;
+L_0x55da1a316c70 .functor AND 1, v0x55da1a316460_0, v0x55da1a3167a0_0, L_0x55da1a316960, C4<1>;
+L_0x55da1a316d60 .functor AND 1, v0x55da1a316560_0, v0x55da1a3167a0_0, v0x55da1a3166d0_0, C4<1>;
+L_0x55da1a316f70 .functor OR 1, L_0x55da1a316a20, L_0x55da1a316bb0, L_0x55da1a316c70, L_0x55da1a316d60;
+v0x55da1a2b43b0_0 .net "i0", 0 0, v0x55da1a3162d0_0;  1 drivers
+v0x55da1a3157c0_0 .net "i1", 0 0, v0x55da1a316390_0;  1 drivers
+v0x55da1a315880_0 .net "i2", 0 0, v0x55da1a316460_0;  1 drivers
+v0x55da1a315950_0 .net "i3", 0 0, v0x55da1a316560_0;  1 drivers
+v0x55da1a315a10_0 .net "out", 0 0, L_0x55da1a316f70;  alias, 1 drivers
+v0x55da1a315b20_0 .net "s0", 0 0, v0x55da1a3166d0_0;  1 drivers
+v0x55da1a315be0_0 .net "s0n", 0 0, L_0x55da1a316960;  1 drivers
+v0x55da1a315ca0_0 .net "s1", 0 0, v0x55da1a3167a0_0;  1 drivers
+v0x55da1a315d60_0 .net "s1n", 0 0, L_0x55da1a316870;  1 drivers
+v0x55da1a315eb0_0 .net "y0", 0 0, L_0x55da1a316a20;  1 drivers
+v0x55da1a315f70_0 .net "y1", 0 0, L_0x55da1a316bb0;  1 drivers
+v0x55da1a316030_0 .net "y2", 0 0, L_0x55da1a316c70;  1 drivers
+v0x55da1a3160f0_0 .net "y3", 0 0, L_0x55da1a316d60;  1 drivers
+    .scope S_0x55da1a2ec630;
+T_0 ;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55da1a3162d0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55da1a316390_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55da1a316460_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55da1a316560_0, 0, 1;
+    %delay 1, 0;
+    %vpi_call 2 17 "$display", "in0= %b, in1= %b, in2= %b, in3= %b\012", v0x55da1a3162d0_0, v0x55da1a316390_0, v0x55da1a316460_0, v0x55da1a316560_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55da1a3167a0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55da1a3166d0_0, 0, 1;
+    %delay 1, 0;
+    %vpi_call 2 20 "$display", "s1 = %b, s0 = %b, out = %b \012", v0x55da1a3167a0_0, v0x55da1a3166d0_0, v0x55da1a316630_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55da1a3167a0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55da1a3166d0_0, 0, 1;
+    %delay 1, 0;
+    %vpi_call 2 23 "$display", "s1 = %b, s0 = %b, out = %b \012", v0x55da1a3167a0_0, v0x55da1a3166d0_0, v0x55da1a316630_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55da1a3167a0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55da1a3166d0_0, 0, 1;
+    %delay 1, 0;
+    %vpi_call 2 26 "$display", "s1 = %b, s0 = %b, out = %b \012", v0x55da1a3167a0_0, v0x55da1a3166d0_0, v0x55da1a316630_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55da1a3167a0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55da1a3166d0_0, 0, 1;
+    %delay 1, 0;
+    %vpi_call 2 29 "$display", "s1 = %b, s0 = %b, out = %b \012", v0x55da1a3167a0_0, v0x55da1a3166d0_0, v0x55da1a316630_0 {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb_mux4to1.v";
+    "mux4to1.v";

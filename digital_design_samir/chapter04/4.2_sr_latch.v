@@ -1,4 +1,4 @@
-module sr_latch (sbar,rbar,q,qbar);
+module sr_latch (q,qbar,sbar,rbar);
 
 //ports
 input sbar,rbar;
@@ -21,17 +21,12 @@ reg set,reset;
 
 
 //instantiation
-sr_latch sr1(~set,~reset,q,qbar);
+sr_latch sr1(q,qbar,~set,~reset);
 
 //behavioral
 initial
 	begin
-		$dumpfile("waves.vcd");
-		$dumpvars(0,test);
-
-
-
-		$monitor($time,"set=%b , reset=%b, q=%b, ~q=%b\n",set,reset,q,qbar);
+		$monitor($time," set=%b , reset=%b, q=%b, ~q=%b\n",set,reset,q,qbar);
 		reset=0;set=1;
 		#5 reset=1;set=0;
 		#5 reset=0;set=1;
