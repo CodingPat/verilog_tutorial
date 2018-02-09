@@ -6,7 +6,7 @@ module tb_fulladd;
 	wire c_out;
 
 	//instantiate fulladd
-	fulladd4b myfulladd(a,b,c_in,sum,c_out);
+	fulladd4b myfulladd(sum,c_out,a,b,c_in);
 
 	//simulate
 
