@@ -8,7 +8,7 @@ module tb_my_or;
 	//start monitoring
 	initial
 		begin
-			$monitor($time," a=%b b=%b or=%b",a,b,out);
+			$monitor($time,"# a=%b b=%b or=%b",a,b,out);
 		end
 		
 	initial
@@ -32,12 +32,13 @@ module my_or(out,a,b);
 	output out;
 
 	//internal nets
-	wire e,f;
+	wire d,e;
+
 
 	//instantiate primitives
-	nand(e,a,a);
-	nand(f,b,b);
-	nand(out,e,f);
+	nand(d,a,a);
+	nand(e,b,b);
+	nand(out,d,e);
 
 
 endmodule
