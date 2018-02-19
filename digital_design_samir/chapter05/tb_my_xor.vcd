@@ -1,0 +1,66 @@
+$date
+	Mon Feb 19 14:53:58 2018
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_my_xor $end
+$var wire 1 ! out $end
+$var reg 1 " a $end
+$var reg 1 # b $end
+$scope module my_xor1 $end
+$var wire 1 " a $end
+$var wire 1 # b $end
+$var wire 1 ! out $end
+$var wire 1 $ notb $end
+$var wire 1 % nota $end
+$var wire 1 & e $end
+$var wire 1 ' d $end
+$scope module my_and1 $end
+$var wire 1 " a $end
+$var wire 1 ( c $end
+$var wire 1 ' out $end
+$var wire 1 $ b $end
+$upscope $end
+$scope module my_and2 $end
+$var wire 1 # a $end
+$var wire 1 ) c $end
+$var wire 1 & out $end
+$var wire 1 % b $end
+$upscope $end
+$scope module my_not1 $end
+$var wire 1 " a $end
+$var wire 1 % out $end
+$upscope $end
+$scope module my_not2 $end
+$var wire 1 # a $end
+$var wire 1 $ out $end
+$upscope $end
+$scope module my_or1 $end
+$var wire 1 ' a $end
+$var wire 1 & b $end
+$var wire 1 * d $end
+$var wire 1 + e $end
+$var wire 1 ! out $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+1+
+1*
+1)
+1(
+0'
+0&
+1%
+1$
+0#
+0"
+0!
+$end
+#2

@@ -8,7 +8,7 @@ input a,b,c;
 wire e;
 
 //Instantiations primitives
-and #(5) (e,a,b);
-or #(4) (out,e,c);
+and #(5)(e,a,b);
+or #(4)(out,e,c);
 
 endmodule
