@@ -1,0 +1,121 @@
+#! /home/woody/bin/iverilog/bin/vvp
+:ivl_version "11.0 (devel)" "(s20150603-479-ga1a7f5de)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "vhdl_textio";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x564ef0f1e630 .scope module, "tb_latch" "tb_latch" 2 1;
+ .timescale 0 0;
+v0x564ef0f7fce0_0 .net "Q", 0 0, L_0x564ef0f80040;  1 drivers
+v0x564ef0f7fda0_0 .net "QBAR", 0 0, L_0x564ef0f801f0;  1 drivers
+v0x564ef0f7fe70_0 .var "RESET", 0 0;
+v0x564ef0f7ff70_0 .var "SET", 0 0;
+S_0x564ef0f1e7c0 .scope module, "l1" "latch" 2 7, 3 1 0, S_0x564ef0f1e630;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "q"
+    .port_info 1 /OUTPUT 1 "qbar"
+    .port_info 2 /INPUT 1 "reset"
+    .port_info 3 /INPUT 1 "set"
+L_0x564ef0f80040/d .functor NOR 1, v0x564ef0f7fe70_0, L_0x564ef0f801f0, C4<0>, C4<0>;
+L_0x564ef0f80040 .delay 1 (1,1,1) L_0x564ef0f80040/d;
+L_0x564ef0f801f0/d .functor NOR 1, v0x564ef0f7ff70_0, L_0x564ef0f80040, C4<0>, C4<0>;
+L_0x564ef0f801f0 .delay 1 (1,1,1) L_0x564ef0f801f0/d;
+v0x564ef0f5a080_0 .net "q", 0 0, L_0x564ef0f80040;  alias, 1 drivers
+v0x564ef0f7f9e0_0 .net "qbar", 0 0, L_0x564ef0f801f0;  alias, 1 drivers
+v0x564ef0f7faa0_0 .net "reset", 0 0, v0x564ef0f7fe70_0;  1 drivers
+v0x564ef0f7fb70_0 .net "set", 0 0, v0x564ef0f7ff70_0;  1 drivers
+    .scope S_0x564ef0f1e630;
+T_0 ;
+    %vpi_call 2 12 "$monitor", $time, " set=%b reset=%b q=%b notq=%b", v0x564ef0f7ff70_0, v0x564ef0f7fe70_0, v0x564ef0f7fce0_0, v0x564ef0f7fda0_0 {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0x564ef0f1e630;
+T_1 ;
+    %vpi_call 2 18 "$dumpfile", "tb_latch.vcd" {0 0 0};
+    %vpi_call 2 19 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x564ef0f1e630 {0 0 0};
+    %end;
+    .thread T_1;
+    .scope S_0x564ef0f1e630;
+T_2 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564ef0f7ff70_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564ef0f7fe70_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x564ef0f7ff70_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564ef0f7fe70_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564ef0f7ff70_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564ef0f7fe70_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564ef0f7ff70_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564ef0f7fe70_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564ef0f7ff70_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564ef0f7fe70_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564ef0f7ff70_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x564ef0f7fe70_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564ef0f7ff70_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564ef0f7fe70_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564ef0f7ff70_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564ef0f7fe70_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564ef0f7ff70_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564ef0f7fe70_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564ef0f7ff70_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x564ef0f7fe70_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564ef0f7ff70_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564ef0f7fe70_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564ef0f7ff70_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564ef0f7fe70_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x564ef0f7ff70_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564ef0f7fe70_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564ef0f7ff70_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x564ef0f7fe70_0, 0, 1;
+    %delay 2, 0;
+    %vpi_call 2 43 "$finish" {0 0 0};
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb_latch.v";
+    "latch.v";
