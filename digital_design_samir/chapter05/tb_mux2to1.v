@@ -15,7 +15,7 @@ module tb_mux2to1;
 	initial
 		begin
 			$dumpfile("tb_mux2to1.vcd");
-			$dumpvars(0,"m1");
+			$dumpvars(0,tb_mux2to1);
 		end
 
 
