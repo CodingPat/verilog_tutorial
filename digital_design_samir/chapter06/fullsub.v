@@ -5,7 +5,7 @@ module fullsub(D,B,x,y,z);
 
 	//dataflow
 
-	assign D=(~x&~y&z)||(~x&y&~z)||(x&~y&~z)||(x&y&z);
-	assign B=(~x&y)||(~x&z)||(y&z);
+	assign D=(~x&&~y&&z)||(~x&&y&&~z)||(x&&~y&&~z)||(x&&y&&z);
+	assign B=(~x&&y)||(~x&&z)||(y&&z);
 
 endmodule

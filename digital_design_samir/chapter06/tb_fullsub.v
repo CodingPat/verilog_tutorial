@@ -7,7 +7,7 @@ module tb_fullsub;
 
 	initial
 		begin
-			$monitor($time," - x=%b y=%b z=%b D=%b B=%b",x,y,z,D,B);
+			$monitor($time," - x=%b y=%b z=%b B=%b D=%b",x,y,z,B,D);
 		end
 
 	initial
